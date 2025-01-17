@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divya Thumu | Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #4caf50, #81c784);
+            color: white;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        .section {
+            padding: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .skills, .projects, .involvements {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Divya Thumu</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#involvements">Involvements</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Hi, I'm Divya Thumu</h1>
+        <p>CS + Bioengineering Enthusiast | Robotics Programmer | Cancer Scholar</p>
+        <button>Download My Resume</button>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I'm a passionate Computer Science and Bioengineering student dedicated to applying technology to healthcare advancements. With experience in leadership, programming, and research, I strive to create impactful solutions in interdisciplinary fields.</p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="card">
+                <h3>Programming Languages</h3>
+                <p>Java, Python, C++, SQL</p>
+            </div>
+            <div class="card">
+                <h3>Tools</h3>
+                <p>GitHub, Jupyter Notebook, Image Processing Software</p>
+            </div>
+            <div class="card">
+                <h3>Soft Skills</h3>
+                <p>Leadership, Communication, Problem-Solving</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="card">
+                <h3>C++ Image Processing</h3>
+                <p>Developed a tool for image seam carving using energy calculation and seam removal techniques.</p>
+            </div>
+            <div class="card">
+                <h3>Health by Zip Code</h3>
+                <p>Analyzed public health data to create visualizations addressing disparities across regions.</p>
+            </div>
+            <div class="card">
+                <h3>Robotics Programming</h3>
+                <p>Programmed autonomous systems for competitive robotics challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="involvements" class="section">
+        <h2>Involvements</h2>
+        <div class="involvements">
+            <div class="card">
+                <h3>National Honor Society</h3>
+                <p>Vice President leading initiatives for academic excellence and community service.</p>
+            </div>
+            <div class="card">
+                <h3>Coding Club</h3>
+                <p>Co-President promoting computer science education and organizing workshops.</p>
+            </div>
+            <div class="card">
+                <h3>Robotics Club</h3>
+                <p>Lead Programmer designing and coding solutions for robotics competitions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:divyathumu@example.com">divyathumu@example.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/divyathumu">linkedin.com/in/divyathumu</a></p>
+        <p>GitHub: <a href="https://github.com/divyathumu">github.com/divyathumu</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divya Thumu. All rights reserved.</p>
+    </footer>
+</body>
+</html>
