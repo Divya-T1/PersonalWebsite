@@ -23,7 +23,7 @@
     #hamburger-nav {
         display: flex;
     }
-    
+
     #about, #research {
         height:fit-content;
         margin: 0 10%
@@ -183,6 +183,180 @@
 
     .social-info {
         margin-left: -60px;
+    }
+    
+}
+
+
+@media screen and (max-width: 600px) {
+
+    #desktop-nav {
+        display: none;
+    }
+
+    #hamburger-nav {
+        display: flex;
+    }
+    
+    #about, #research, #projects, #skills, #involvements, #contact, #profile {
+        height:fit-content;
+        margin: 0 10%
+    }
+    
+
+    #profile,
+    .section_text {
+        display: block;
+    }
+
+    .section_pic-container {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto 2rem;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column; /* Stack all content vertically */
+        align-items: center; /* Center the content */
+      }
+    
+      .about-info {
+        text-align: center; /* Center-align the "Get to Know More" and title */
+      }
+    
+      .section-container {
+        display: flex;
+        flex-direction: column; /* Stack the image and description vertically */
+        align-items: center; /* Center-align content */
+      }
+    
+      .section_pic-container {
+        width: 100%; /* Scale the image container to a smaller size */
+        max-width: 300px; /* Limit the maximum width of the image */
+      }
+    
+      .about-pic {
+        width: 100%; /* Make the image fill the container */
+        height: auto; /* Maintain aspect ratio */
+      }
+    
+      .about-details-container {
+        width: 100%; /* Ensure the description doesn't stretch too wide */
+        max-width: 1200px; /* Limit the maximum width of the description */
+        text-align: center; /* Center-align the text */
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+        line-height: 1.5; /* Improve readability */
+        color: #555; /* Softer text color for readability */
+        border: black 0.1rem solid;
+        padding: 10px;
+        margin-top: -5px;
+      }
+    
+    .Info b {
+        color: #222; /* Highlight bolded text for emphasis */
+        max-width: 1200px;
+      }
+
+    .project-card,
+    .involve-card {
+        width: 100%; /* Reduce card width for smaller screens */
+        margin: 0 auto 20px auto; /* Center the cards */
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .research-card {
+        flex-direction: column;
+        width: 100%;
+        max-width: 1200px
+    }
+
+    .left-section {
+        width:100%;
+        object-fit: cover;
+        height: 250px;
+    }
+
+    .right-section {
+        width: 100%;
+        object-fit: cover;
+        padding: 5px 10px;
+    }
+
+    .project-name {
+        display:flex;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        position: relative;
+        transition: transform 0.3s ease, text-decoration 0.3s ease, color 0.3s ease;
+    }
+
+    .research-card1 {
+        flex-direction: column-reverse;
+        width: 100%;
+        max-width: 1200px
+    }
+
+    .left-section1 {
+        width:100%;
+        object-fit: cover;
+        padding: 5px 10px;
+    }
+
+    .right-section1 {
+        width: 100%;
+        object-fit: cover;
+        height: 250px;
+    }
+
+    .project-name2 {
+        display:flex;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        position: relative;
+        transition: transform 0.3s ease, text-decoration 0.3s ease, color 0.3s ease;
+    }
+
+    .project-name::before, .project-name2::before {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 5px; /*underline thickness*/
+        border-radius: 5px;
+        top: -20px;
+        left: 0;
+        background-color: rgb(22, 98, 145);
+        transition: width 0.3s ease;
+      
+    }
+
+    .research-card:hover .project-name::before {
+        width: 90%;
+        text-decoration: underline;
+        transition: width 0.3s ease;
+    }
+
+    .research-card:hover .project-name2::before {
+        width: 90%;
+        text-decoration: underline;
+        transition: width 0.3s ease;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .project-desc3 {
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    .social-info {
+        margin-left: -30px;
     }
     
 }
