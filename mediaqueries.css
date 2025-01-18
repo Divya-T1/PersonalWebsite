@@ -251,6 +251,7 @@
         border: black 0.1rem solid;
         padding: 10px;
         margin-top: -5px;
+        margin-left: -10px;
       }
     
     .Info b {
@@ -388,12 +389,12 @@
       .linkedIn {
         font-size: 0.9rem; /* Reduce font size */
         text-align: center;
-        margin-left: 40px;
+        margin-left: 60px;
       }
     
       .email-icon,
       .linkedin-icon {
         height: 1.5rem; /* Adjust icon size */
-        margin-left: 40px;
+        margin-left: 60px;
       }
 }
