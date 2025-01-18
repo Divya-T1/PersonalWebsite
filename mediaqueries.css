@@ -358,5 +358,40 @@
     .social-info {
         margin-left: -30px;
     }
+
     
+    #contact {
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 20px; /* Add padding for spacing */
+      }
+    
+      .contact-section {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center-align the content */
+        gap: 10px; /* Add spacing between elements */
+      }
+    
+      .contact {
+        font-size: 2.5rem; /* Reduce the font size for smaller screens */
+        margin: 0.5rem 0; /* Add margin for spacing */
+      }
+    
+      .social-info {
+        flex-direction: column; /* Stack the social links vertically */
+        gap: 1rem; /* Add space between the items */
+        border: none; /* Remove border to simplify design */
+        padding: 10px; /* Adjust padding for smaller screens */
+        width: 90%; /* Ensure the social-info fits within the container */
+      }
+    
+      .email,
+      .linkedIn {
+        font-size: 0.9rem; /* Reduce font size */
+        text-align: center;
+      }
+    
+      .email-icon,
+      .linkedin-icon {
+        height: 1.5rem; /* Adjust icon size */
+      }
 }
