@@ -677,12 +677,11 @@ section {
   text-align: center;
   font-weight: 400;
   font-size: 15px;
-  margin-bottom: 20px;
-  margin-top: 23px;
+  margin-bottom: 23px;
 }
 
 .buttons3 {
-  margin-top: -15px;
+  margin-top: 18px;
   display: flex;
   flex-direction: row;
   justify-content: center;
