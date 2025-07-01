@@ -10,6 +10,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
+     background: linear-gradient(135deg, rgb(217, 170, 188) 0%, rgb(176, 98, 135) 50%, rgb(156, 64, 154) 100%);
 
       .poppins-light {
         font-family: "Poppins", serif;
@@ -35,6 +36,64 @@ body {
         font-style: normal;
       }
 }
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6); /* Increased opacity */
+    border-radius: 50%;
+    animation: float 10s infinite linear; /* Reduced duration */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Added glow */
+}
+
+/* Add different colors to each particle */
+.particle:nth-child(1) { 
+    width: 80px; 
+    height: 80px; 
+    left: 10%; 
+    animation-delay: 0s;
+    background: rgba(135, 206, 235, 0.7);
+}
+.particle:nth-child(2) { 
+    width: 60px; 
+    height: 60px; 
+    left: 20%; 
+    animation-delay: 2s;
+    background: rgba(255, 182, 193, 0.7);
+}
+/* ... and so on for other particles */
+.particle:nth-child(3) { width: 100px; height: 100px; left: 35%; animation-delay: 6s; background: rgba(198, 79, 152, 0.7);}
+.particle:nth-child(4) { width: 50px; height: 50px; left: 50%; animation-delay: 8s; background: rgba(75, 203, 193, 0.7);}
+.particle:nth-child(5) { width: 90px; height: 90px; left: 65%; animation-delay: 4s; background: rgba(199, 146, 81, 0.7);}
+.particle:nth-child(6) { width: 70px; height: 70px; left: 80%; animation-delay: 10s; background: rgba(255, 182, 193, 0.7);}
+.particle:nth-child(7) { width: 65px; height: 65px; left: 40%; animation-delay: 3s; background: rgba(82, 124, 188, 0.7);}
+.particle:nth-child(8) { width: 70px; height: 70px; left: 70%; animation-delay: 5s; background: rgba(255, 182, 193, 0.7);}
 
 html {
     scroll-behavior: smooth;
@@ -778,7 +837,7 @@ section {
   overflow: hidden;
   object-fit: contain;
   margin-right: 20px;
-  height: 475px;
+  height: 600px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -788,7 +847,7 @@ section {
 
 .image-involve {
   width:100%;
-  height: 200px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
