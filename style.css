@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap');ort url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
 
 *{
     margin: 0;
@@ -10,7 +9,10 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
-     background: linear-gradient(135deg, rgb(217, 170, 188) 0%, rgb(176, 98, 135) 50%, rgb(156, 64, 154) 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #1e3c72 50%, #2a5298 75%, #1e3c72 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    min-height: 100vh;
 
       .poppins-light {
         font-family: "Poppins", serif;
@@ -37,6 +39,18 @@ body {
       }
 }
 
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 @keyframes float {
     0% {
         transform: translateY(100vh) rotate(0deg);
@@ -54,6 +68,39 @@ body {
     }
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .animated-background {
     position: fixed;
     top: 0;
@@ -66,34 +113,31 @@ body {
 
 .particle {
     position: absolute;
-    background: rgba(255, 255, 255, 0.6); /* Increased opacity */
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    animation: float 10s infinite linear; /* Reduced duration */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Added glow */
+    animation: float 15s infinite linear;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
-/* Add different colors to each particle */
+/* Add subtle professional colors to each particle */
 .particle:nth-child(1) { 
-    width: 80px; 
-    height: 80px; 
-    left: 10%; 
-    animation-delay: 0s;
-    background: rgba(135, 206, 235, 0.7);
-}
-.particle:nth-child(2) { 
     width: 60px; 
     height: 60px; 
-    left: 20%; 
-    animation-delay: 2s;
-    background: rgba(255, 182, 193, 0.7);
+    left: 10%; 
+    animation-delay: 0s;
+    background: rgba(255, 255, 255, 0.05);
 }
-/* ... and so on for other particles */
-.particle:nth-child(3) { width: 100px; height: 100px; left: 35%; animation-delay: 6s; background: rgba(198, 79, 152, 0.7);}
-.particle:nth-child(4) { width: 50px; height: 50px; left: 50%; animation-delay: 8s; background: rgba(75, 203, 193, 0.7);}
-.particle:nth-child(5) { width: 90px; height: 90px; left: 65%; animation-delay: 4s; background: rgba(199, 146, 81, 0.7);}
-.particle:nth-child(6) { width: 70px; height: 70px; left: 80%; animation-delay: 10s; background: rgba(255, 182, 193, 0.7);}
-.particle:nth-child(7) { width: 65px; height: 65px; left: 40%; animation-delay: 3s; background: rgba(82, 124, 188, 0.7);}
-.particle:nth-child(8) { width: 70px; height: 70px; left: 70%; animation-delay: 5s; background: rgba(255, 182, 193, 0.7);}
+.particle:nth-child(2) { 
+    width: 40px; 
+    height: 40px; 
+    left: 20%; 
+    animation-delay: 3s;
+    background: rgba(255, 255, 255, 0.08);
+}
+.particle:nth-child(3) { width: 80px; height: 80px; left: 35%; animation-delay: 6s; background: rgba(255, 255, 255, 0.06);}
+.particle:nth-child(4) { width: 30px; height: 30px; left: 50%; animation-delay: 9s; background: rgba(255, 255, 255, 0.07);}
+.particle:nth-child(5) { width: 70px; height: 70px; left: 65%; animation-delay: 12s; background: rgba(255, 255, 255, 0.05);}
+.particle:nth-child(6) { width: 50px; height: 50px; left: 80%; animation-delay: 15s; background: rgba(255, 255, 255, 0.08);}
 
 html {
     scroll-behavior: smooth;
@@ -120,6 +164,13 @@ nav { /*default of 1rem*/
     justify-content: space-around;
     align-items: center;
     height: 17vh; /*the nav part takes up 17% of the visible height of the window */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
 }
 
 .nav-links {
@@ -129,28 +180,63 @@ nav { /*default of 1rem*/
 }
 
 a {
-  color: black;
+  color: white;
   display: flex;
   text-decoration: none;
   text-decoration-color: white;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-  color: grey;
-  transform: scale(1.05);
-  text-decoration: underline;
-  text-underline-offset: 0.5rem; /*adds some space between the word and the underline*/
-  text-decoration-color: rgb(181,181,181);
+  color: #fff;
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a.active {
+  color: #2a5298;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+a.active::after {
+  width: 100%;
 }
 
 .logo {
   font-size: 2rem;
   font-weight: 700;
   font-family: "Great Vibes";
+  background: linear-gradient(45deg, #1e3c72, #2a5298, #1e3c72);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+  transition: all 0.3s ease;
 }
 
 .logo:hover {
   cursor: default;
+  transform: scale(1.05);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 #hamburger-nav{
@@ -291,37 +377,67 @@ section {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+  animation: fadeInUp 1s ease-out;
 }
 
 .section_pic-container {
   display: flex;
   height: 400px;
   width: 400px;
-  margin: auto 0;
+  transition: all 0.3s ease;
+  animation: slideInLeft 1s ease-out 0.3s both;
+}
+
+.section_pic-container:hover {
+  transform: scale(1.05);
+}
+
+.section_pic-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.section_pic-container:hover img {
+  transform: scale(1.1);
 }
 
 .section_text {
   align-self: center;
   text-align: center;
+  animation: slideInRight 1s ease-out 0.5s both;
 }
 
 .section_text p {
   font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 } 
 
 .section_text_p1 {
   font-size: 1.2rem;
   text-align: center;
+  animation: fadeInUp 1s ease-out 0.7s both;
 }
 
 .section_text_p2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out 0.9s both;
 }
 
 .title {
   font-size: 3rem;
   text-align: center;
+  background: linear-gradient(45deg, #87CEEB, #B0E0E6, #87CEEB);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite, fadeInUp 1s ease-out 0.8s both;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #social-container {
@@ -337,10 +453,14 @@ section {
 .icon {
   cursor: pointer;
   height: 3rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  animation: fadeInUp 1s ease-out 1.5s both;
 }
 
 .icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.2) translateY(-3px);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 }
 
 /* BUTTONS */
@@ -357,9 +477,11 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
-  border: rgb(53,53,53)0.1rem solid;
-  background-color: white;
-  color: black;
+  border: none;
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  color: white;
+  box-shadow: 0 4px 15px rgba(30, 60, 114, 0.4);
+  animation: fadeInUp 1s ease-out 1.1s both;
 }
 
 .Contact {
@@ -368,22 +490,23 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
-  border: rgb(53,53,53)0.1rem solid;
-  background-color: rgb(0,0,0);
+  border: none;
+  background: linear-gradient(45deg, #2a5298, #1e3c72);
   color: white;
+  box-shadow: 0 4px 15px rgba(42, 82, 152, 0.4);
+  animation: fadeInUp 1s ease-out 1.3s both;
 }
 
 .resumeButton:hover {
   cursor: pointer;
-  background-color: rgb(211,211,211);
-  transform: scale(1.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(30, 60, 114, 0.6);
 }
 
 .Contact:hover {
   cursor: pointer;
-  background-color: rgb(211,211,211);
-  color: black;
-  transform: scale(1.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(42, 82, 152, 0.6);
 }
 
 #about {
@@ -416,19 +539,38 @@ section {
 
 .section_pic-container {
   height: 400px;
-  width: 400px;
+  width: 500px;
   margin: auto 0;
+  transition: all 0.3s ease;
+}
+
+.section_pic-container:hover {
+  transform: scale(1.02);
+}
+
+.section_pic-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .about-details-container {
   display: flex;
   margin-left: 2rem;
   margin-top: 4rem;
+  max-width: 400px;
 }
 
 .Info {
   text-align: left;
-  justify-content: center;
+  color: #2c3e50;
+  font-weight: 500;
+  line-height: 1.8;
+  background: linear-gradient(135deg, #87CEEB, #B0E0E6);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 #research {
@@ -444,18 +586,21 @@ section {
   justify-content: start;
   height: auto; /* Let height adjust to content */
   gap: 20px;
-  background-color: rgb(238,238,238);
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 900px;
   overflow: hidden;
   margin-bottom: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out;
 }
 
 .research-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .left-section {
@@ -565,21 +710,24 @@ section {
 
 .research-card1 {
   display: flex;
-  justify-content: start;
+  justify-content: flex-end;
   height: auto; 
   gap: 20px;
-  background-color: rgb(238,238,238);
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 900px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
+  margin-left: auto;
 }
 
 .research-card1:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .left-section1{
@@ -653,19 +801,23 @@ section {
 .project-card {
   display: flex;
   flex-direction: column;
-  background-color: rgb(255,236,242);
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   width: 33vw;
   overflow: hidden;
   object-fit: contain;
   margin-right: 20px;
   height: 425px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
 .image {
@@ -773,7 +925,13 @@ section {
 .section_text1 {
   text-align: center;
   font-size: 3rem;
-  text-align: center;
+  background: linear-gradient(45deg, #87CEEB, #B0E0E6, #87CEEB);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .skill-levels {
@@ -782,6 +940,12 @@ section {
 
 .skill {
   font-weight: 800;
+  color: #B0E0E6;
+}
+
+.html\/css {
+  color: #B0E0E6;
+  font-weight: 600;
 }
 
 .skill-bar {
@@ -796,15 +960,37 @@ section {
 
 .skill-level {
   height: 100%;
-  background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);
-  color: black;
+  background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 50%, #87CEEB 100%);
+  color: white;
   text-align: right;
   padding-right: 10px;
   line-height: 35px;
   white-space: nowrap;
-  transition: width 1s ease-in-out;
+  transition: width 2s ease-in-out;
   font-size: 1rem;
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-level::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 
@@ -830,19 +1016,23 @@ section {
 .involve-card {
   display: flex;
   flex-direction: column;
-  background-color: rgb(255,236,242);
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   width: 33vw;
   overflow: hidden;
   object-fit: contain;
   margin-right: 20px;
   height: 600px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out;
 }
 
 .involve-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
 .image-involve {
@@ -858,37 +1048,46 @@ section {
 .section-info-involve {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
+  height: 100%;
 }
 
 .project-title-involve {
-  margin-top: -10px;
+  margin-top: 0;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .club-name {
   text-decoration: underline;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .position {
-  margin-top: -20px;
+  margin-top: 5px;
   text-decoration: none;
-  color: black;
-  margin-bottom: 25px;
+  color: #34495e;
+  margin-bottom: 15px;
+  font-weight: 500;
 }
 
 .project-desc-involve {
   text-align: center;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 20px;
-  margin-top: -23px;
+  margin-top: 0;
+  color: #2c3e50;
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
 .buttons-involve {
-  margin-top: -10px;
+  margin-top: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -913,6 +1112,9 @@ section {
   font-weight: 400;
   text-align: center;
   margin-bottom: 0.1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
 }
 
 .contact {
@@ -920,6 +1122,13 @@ section {
   text-align: center;
   margin-top: 0.1rem;
   margin-bottom: -0.5rem;
+  background: linear-gradient(45deg, #87CEEB, #B0E0E6, #87CEEB);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite, fadeInUp 1s ease-out 0.3s both;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .social-info {
@@ -927,52 +1136,83 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: rgb(53,53,53) 0.01rem solid;
-  border-color: black;
-  border-radius: 1.5rem;
-  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  gap: 1rem;
   margin: 2rem auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.social-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .email-icon {
   height:2rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .email {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
 .linkedin-icon {
   height: 2rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .linkedIn {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
 .email:hover {
   cursor: pointer;
+  color: #2a5298;
+  transform: translateY(-2px);
 }
 
 .linkedIn:hover{
   cursor:pointer;
+  color: #2a5298;
+  transform: translateY(-2px);
+}
+
+.email-icon:hover,
+.linkedin-icon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 }
 
 footer {
   height: 15vh;
   margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer p {
   text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  animation: fadeInUp 1s ease-out;
 }
 
 
