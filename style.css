@@ -358,11 +358,9 @@ a.active::after {
 /* SECTIONS */
 
 section {
-  padding-top: 2vh;
-  height: 96vh;
+  padding: 4rem 0;
   margin: 0 10rem;
   box-sizing: border-box;
-  min-height: fit-content;
 }
 
 .section-container {
@@ -377,6 +375,7 @@ section {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+  padding: 0;
   animation: fadeInUp 1s ease-out;
 }
 
@@ -575,7 +574,6 @@ section {
 
 #research {
   position: relative;
-  margin-bottom: 4rem;
 }
 
 .my-research {
@@ -792,12 +790,41 @@ section {
 
 #projects {
   position: relative;
-  margin-bottom: -4rem;
+  margin-bottom: 0;
+}
+
+.my-projects {
+  text-align: center;
 }
 
 .cards {
   display: flex;
   flex-direction: row;
+}
+
+#projects .cards {
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+#projects .project-card {
+  width: calc(50% - 12px);
+  margin-right: 0;
+  height: auto;
+  min-height: 380px;
+}
+
+.emi-placeholder {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emi-icon {
+  font-size: 4rem;
 }
 
 .project-card {
@@ -839,9 +866,10 @@ section {
 .section-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 1.2rem 1rem 1.2rem;
+  flex: 1;
 }
 
 .project-title {
@@ -857,6 +885,7 @@ section {
 }
 
 .buttons {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -1011,9 +1040,49 @@ section {
   );
 }
 
+.skill-section-label {
+  color: #B0E0E6;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skill-categories {
+  margin-top: 1rem;
+}
+
+.skill-category-group {
+  margin-bottom: 0.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, rgba(135, 206, 235, 0.2), rgba(176, 224, 230, 0.2));
+  border: 1px solid rgba(135, 206, 235, 0.4);
+  color: #B0E0E6;
+  border-radius: 2rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, rgba(135, 206, 235, 0.4), rgba(176, 224, 230, 0.4));
+  transform: translateY(-2px);
+}
+
 #involvements {
   position: relative;
-  margin-bottom: -4rem;
 }
 
 .involve-card {
@@ -1028,7 +1097,7 @@ section {
   overflow: hidden;
   object-fit: contain;
   margin-right: 20px;
-  height: 600px;
+  min-height: 600px;
   transition: all 0.3s ease;
   animation: fadeInUp 1s ease-out;
 }
@@ -1054,7 +1123,7 @@ section {
   justify-content: flex-start;
   align-items: center;
   padding: 20px;
-  height: 100%;
+  flex: 1;
 }
 
 .project-title-involve {
@@ -1103,8 +1172,6 @@ section {
 
 #contact {
   position: relative;
-  margin-top: 4rem;
-  height: 70px;
 }
 
 .contact-section {
